@@ -1,0 +1,419 @@
+{
+  "sharding": {
+    "summary": "",
+    "description": "",
+    "improves": ["throughput", "transaction cost"],
+    "worsen": ["complexity"],
+    "layer": 1,
+    "tags": ["sharding", "architecture"],
+    "comments": [
+      "Validator - a participant in the Casper/sharding consensus system. You can become one by depositing 32 ETH into the Casper mechanism.",
+      "Active validator set - those validators who are currently participating, and which the Casper mechanism looks to produce and attest to blocks, cross-links and other consensus objects.",
+      "Notary - a signer of a cross-link",
+      "Committee - a (pseudo-) randomly sampled subset of the active validator set. When a committee is referred to collectively, as in \"this committee attests to X\", this is assumed to mean \"some subset of that committee that contains enough validators that the protocol recognizes it as representing the committee\".",
+      "Proposer - the validator that creates a block",
+      "Attester - a validator that is part of a committee that needs to sign off on a block.",
+      "Beacon chain - the central PoS chain that is the base of the sharding system.",
+      "Shard chain - one of the chains on which transactions take place and account data is stored.",
+      "Main chain - used here to refer to the existing PoW chain, though note that this is temporary; in the long run the beacon chain will be the main chain.",
+      "Cross-link - a set of signatures from a committee attesting to a block in a shard chain, which can be included into the beacon chain. Cross-links are the main means by which the beacon chain “learns about” the updated state of shard chains.",
+      "Epoch - a period of 64 blocks.",
+      "Finalized, justified - see Casper FFG finalization here: https://arxiv.org/abs/1710.09437"
+      ],
+    "resources": [
+      {"https://github.com/ethereum/wiki/wiki/Sharding-FAQs": "Official FAQ"},
+      {"https://medium.com/prysmatic-labs/how-to-scale-ethereum-sharding-explained-ba2e283b7fce": "Sharding high level overview by Prysmatic labs"},
+      {"https://notes.ethereum.org/s/B1-7aivmX": "ECDC Berlin, July 1st Sharding Meeting"},
+      {"https://www.youtube.com/playlist?list=PLaM7G4Llrb7zEHK2UzQo3kxadPyeUy2sZ": "ECDC Berlin videos"},
+      {"https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ": "WIP Specification of Casper + Sharding chain"},
+      {"https://ethresear.ch/t/convenience-link-to-full-casper-chain-v2-spec/2332/12": "Ongoing discussion on the Casper + Sharding spec"},
+      {"https://ethresear.ch/t/offchain-collation-headers/1679/6": "Offchain collation headers proposal"}
+    ],
+    "status": "research",
+    "last_update": "",
+    "implementations": [""],
+    "dependencies": ["beacon chain", "shard chain", "Casper FFG", "Proof of Stake"],
+    "required_by": [""]
+  },
+  "beacon chain": {
+    "summary": "The central PoS chain that is the base of the sharding system.",
+    "description": "",
+    "improves": [""],
+    "layer": 1,
+    "tags": ["sharding"],
+    "comments": [
+      "In charge a generating a heartbeat: a strong random number generated at regular intervals",
+      "In charge of cross-links, slashing conditions, accounting, Casper FFG"
+      ],
+    "resources": [
+      {"https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ#Beacon-chain": "Beacon chain specification (WIP)"}
+    ],
+    "status": "proof-of-concept",
+    "last_update": "2018-07-18",
+    "implementations": [
+      "https://github.com/ethereum/beacon_chain",
+      "https://github.com/prysmaticlabs/beacon-chain",
+      "https://github.com/sigp/rust_beacon_chain",
+      "https://github.com/ChainSafeSystems/lodestar_chain",
+      "https://github.com/ethereum/research/tree/1830ae20915ea9bfb0363793ff3eec06ffbd9889/beacon_chain_impl"
+      ],
+    "dependencies": ["RANDAO"],
+    "required_by": [""]
+  },
+  "RANDAO": {
+    "summary": "A random number generator based on participants organized in a decentralized autonomous organization",
+    "description": "",
+    "improves": [""],
+    "layer": 1,
+    "tags": ["sharding", "cryptography", "random number generator"],
+    "comments": [
+      "It should be completely deterministic given a blockchain state so that client can sync in a deferred manner.",
+      "It should not be predictable, so that it can be used as a strong PRNG (or even cryptographic RNG."
+      ],
+    "resources": [
+      {"https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ#Beacon-chain": "Beacon chain specification (WIP)"},
+      {"https://ethresear.ch/t/making-the-randao-less-influenceable-using-a-random-1-bit-clock/2566/17": "Proposal on reducing influence of validator on the final number generated"},
+      {"https://ethresear.ch/t/rng-exploitability-analysis-assuming-pure-randao-based-main-chain/1825": "Exploitability analysis of the RANDAO RNG"},
+      {"https://blog.ethereum.org/2015/08/28/on-anti-pre-revelation-games/": "2015 article on collusion in a RANDAO"},
+      {"http://swende.se/blog/Breaking_the_house.html": "2015 article on breaking casino smart-contract random number generator"},
+      {"https://forum.ethereum.org/discussion/2031/randao-a-dao-working-as-rng": "RANDAO announcement and discussion"},
+      {"https://ethresear.ch/t/fork-free-randao/1835/3": "Fork-free RANDAO proposition"},
+      {"https://medium.com/ultrayolo/ultrayolos-random-number-generation-rng-on-the-blockchain-proof-of-randomness-c8e35d538d5a": "Overview of RNG techniques on the blockchain"},
+      {"https://blog.positive.com/predicting-random-numbers-in-ethereum-smart-contracts-e5358c6b8620?gi=9d3d46afbaec": "Blockchain PRNGs vulnerabilities"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [
+      "https://github.com/randao/randao"
+      ],
+    "dependencies": ["RANDAO"],
+    "required_by": [""]
+  },
+  "shard chain": {
+    "summary": "One of the chains on which transactions take place and account data is stored.",
+    "description": "",
+    "improves": ["throughput", "transaction cost"],
+    "layer": 1,
+    "tags": ["sharding"],
+    "comments": [""],
+    "resources": [
+      {}
+    ],
+    "status": "proof-of-concept",
+    "last_update": "2018-07-18",
+    "implementations": [
+      "https://github.com/ethereum/beacon_chain",
+      "https://github.com/prysmaticlabs/beacon-chain",
+      "https://github.com/sigp/rust_beacon_chain",
+      "https://github.com/ChainSafeSystems/lodestar_chain"
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "BLS signature aggregation": {
+    "summary": "",
+    "description": "",
+    "improves": ["throughput"],
+    "layer": 1,
+    "tags": ["cryptography"],
+    "use-cases": [
+      "Solve the signature verification bottleneck. ECDSA would take a day when BLS aggregation would take a couple of minutes"
+    ],
+    "comments": [
+      "Not quantum secure",
+      "Will be replaced by STARKs",
+      "Relic and Milagro-crypto (check dis2/bls12) are professionally-written crypto primitive libraries in C with BLS primitives."
+      ],
+    "resources": [
+      {"https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105": "EthResearch intrduction"},
+      {"https://eprint.iacr.org/2018/483.pdf": "Paper: Compact Multi-Signatures for Smaller Blockchains"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [
+      "https://github.com/lovesh/signature-schemes",
+      "https://github.com/zkcrypto/pairing",
+      "https://github.com/dis2/bls12",
+      "https://github.com/milagro-crypto/amcl/issues/29",
+      "https://github.com/relic-toolkit/relic/blob/master/src/cp/relic_cp_bls.c",
+      "https://github.com/blynn/pbc/blob/master/example/bls.c",
+      "https://github.com/str4d/bls",
+      "https://github.com/herumi/bls"
+      ],
+    "dependencies": [""],
+    "required_by": ["sharding"]
+  },
+  "zk-stark": {
+    "summary": "ZK-STARK allows a party to prove validity of a claim (knowledge, ownership, transaction, ...) without disclosing non-public information.",
+    "description": "",
+    "improves": ["throughput", "privacy"],
+    "layer": 1,
+    "tags": ["cryptography"],
+    "use-cases": [
+      "Initial full node syncing",
+      "Decentralized banks: smart-contracts that pools funds which uses zk-stark to prove ownership and transfer money within the pool. Total value owned within the pool is kept private."
+    ],
+    "comments": [
+      "Compared to ZK-SNARK, ZK-STARK does not rely on a thrid-party and is completely transparent",
+      "A ZK-STARK/ZK-SNARK proof is faster to compute than naively checking the claim its proving",
+      "ZK-STARK stands for Zero-Knowledge Succinct, Transparent, ARguments of Knowlegde",
+      "ZK-SNARK stands for Zero-Knowledge Succinct, Non-interactive, ARguments of Knowlegde"
+      ],
+    "resources": [
+      {"https://cyber.stanford.edu/sites/default/files/elibensasson.pdf": "Zcash slides"},
+      {"https://eprint.iacr.org/2018/046.pdf": "Zcash paper"},
+      {"https://blog.ethereum.org/2016/12/05/zksnarks-in-a-nutshell/": "Overview of ZK-SNARK"},
+      {"https://medium.com/@VitalikButerin/zk-snarks-under-the-hood-b33151a013f6": "Overview of ZK-SNARK"},
+      {"https://vitalik.ca/general/2017/11/09/starks_part_1.html": "Overview of ZK-STARK"},
+      {"https://www.youtube.com/watch?v=VUN35BC11Qw": "Introduction video to ZK-SNARK"},
+      {"pending": "ECDC Berlin Starkware presentation"},
+      {"https://notes.ethereum.org/s/B1-7aivmX#⟠-6-Discussion-STARKs-in-sharding-with-Eli-Ben-Sasson-Uri-Kolodny-Avihu-Levy-StarkWare-and-Justin-Drake-Ethereum-Foundation": "Stark & sharding, ECDC Berlin"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [""],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "Proof-of-Stake": {
+    "summary": "",
+    "description": "",
+    "improves": ["energy consumption", "decentralization"],
+    "layer": 1,
+    "tags": ["proof of stake"],
+    "comments": [
+      "Currently 2 ways of doing PoS: 1. Chain-based PoS, similar to PoW. Stakers pseudo-randomly have the right to produce blocks.\n2. Byzantine Fault Tolerant (BFT) PoS."
+      ],
+    "resources": [
+      {"https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQs": "Official PoS FAQ"},
+      {"https://medium.com/@jonchoi/ethereum-casper-101-7a851a4f1eb0": "Proof of Stake design philosophy"},
+      {"https://medium.com/@tuurdemeester/critique-of-buterins-a-proof-of-stake-design-philosophy-49fc9ebb36c6": "Critique of PoS design philosophy"},
+      {"https://medium.com/@VitalikButerin/minimal-slashing-conditions-20f0b500fc6c": "Slashing and economic finality"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "Casper": {
+    "summary": "PoW to PoS transition research projects: Casper FFG by Vitalik and CBC-Casper by Vlad",
+    "description": "",
+    "improves": ["throughput"],
+    "layer": 1,
+    "tags": ["proof of stake", "architecture"],
+    "comments": [
+      ""
+      ],
+    "resources": [
+      {"https://blockgeeks.com/guides/ethereum-casper/": "In-depth dive in Caspers"},
+      {"https://medium.com/@jonchoi/ethereum-casper-101-7a851a4f1eb0": "Casper 101: introduction, goal, design, resources"},
+      {"https://ethereum.stackexchange.com/questions/332/what-is-the-difference-between-casper-and-tendermint": "Casper vs Tendermint"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "Casper CBC": {
+    "summary": "Casper the Friendly GHOST: Correct-by-Construction",
+    "description": "",
+    "improves": ["throughput"],
+    "layer": 1,
+    "tags": ["proof of stake"],
+    "comments": ["Though silent, as of July 2018, CBC-Casper is still ongoing: https://ethresear.ch/t/cbc-casper-in-the-face-of-the-new-pos-sharding-plans-on-ethereum/2444"],
+    "resources": [
+      {}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "Casper FFG": {
+    "summary": "Casper the Friendly Finality Gadget: a PoS finality system built on top of PoW",
+    "description": "",
+    "improves": ["throughput"],
+    "layer": 1,
+    "tags": ["proof of stake"],
+    "comments": [""],
+    "resources": [
+      {"https://arxiv.org/abs/1710.09437": "Casper FFG Paper"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [
+      "https://notes.ethereum.org/zazJPIQSQL2u0pI0K1RShg"
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "state channel": {
+    "summary": "",
+    "description": "",
+    "improves": ["latency", "transaction cost"],
+    "worsen": [""],
+    "layer": 2,
+    "tags": [""],
+    "comments": [""],
+    "resources": [
+      {"https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4": "overview of layer 2 solutions"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "Plasma": {
+    "summary": "",
+    "description": "",
+    "improves": ["throughput", "transaction cost"],
+    "worsen": [""],
+    "layer": 2,
+    "tags": [""],
+    "comments": [""],
+    "resources": [
+      {"https://medium.com/chain-cloud-company-blog/plasma-in-10-minutes-c856da94e339": "Plasma at a glance"},
+      {"https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4": "overview of layer 2 solutions"},
+      {"https://ethresear.ch/t/minimal-viable-plasma/426": "Draft of minimum viable Plasma implementation"},
+      {"https://karl.tech/plasma-cash-simple-spec/": "Plasma Cash spec"},
+      {"https://ethresear.ch/t/pos-plasma-cash-with-sharded-validation/1486": "Plasma Cash + Sharded Validation"},
+      {"https://medium.com/chain-cloud-company-blog/plasma-in-10-minutes-c856da94e339": "Comparison of Plasma and Liquidity.Network offchain scaling solution"},
+      {"https://raiden.network/faq.html": "Raiden, an offchain transfer network using state channels (i.e. complements Plasma/Liquidity.Network"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "Truebit": {
+    "summary": "Offload complex/costly computation off-chain to a third party solver, with a challenge system to keep solver honest",
+    "description": "",
+    "improves": ["computation power"],
+    "worsen": [""],
+    "layer": 2,
+    "tags": [""],
+    "comments": [""],
+    "resources": [
+      {"https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4": "Overview of layer 2 solutions"},
+      {"https://medium.com/@simondlr/an-intro-to-truebit-a-scalable-decentralized-computational-court-1475531400c3": "Introduction to Truebit"},
+      {"https://people.cs.uchicago.edu/~teutsch/papers/truebit.pdf": "Truebit paper"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-18",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "Kademlia": {
+    "summary": "Peer discovery",
+    "description": "",
+    "improves": ["decentralization"],
+    "worsen": [""],
+    "layer": 1,
+    "tags": ["networking", "protocol"],
+    "comments": [""],
+    "resources": [
+      ""
+    ],
+    "status": "poc",
+    "last_update": "2018-07-19",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "libp2p": {
+    "summary": "",
+    "description": "",
+    "improves": [""],
+    "worsen": [""],
+    "layer": 1,
+    "tags": ["networking", "library"],
+    "comments": [""],
+    "resources": [
+      ""
+    ],
+    "status": "poc",
+    "last_update": "2018-07-19",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "devp2p": {
+    "summary": "",
+    "description": "",
+    "improves": [""],
+    "worsen": [""],
+    "layer": 1,
+    "tags": ["networking"],
+    "comments": [""],
+    "resources": [
+      {"https://github.com/ethereum/wiki/wiki/ÐΞVp2p-Wire-Protocol": "Official wiki"}
+    ],
+    "status": "poc",
+    "last_update": "2018-07-19",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": [""]
+  },
+  "PubSub": {
+    "summary": "PubSub specifies how to subscribe to or publish events on the blockchain",
+    "description": "",
+    "improves": [""],
+    "worsen": [""],
+    "layer": 1,
+    "tags": ["networking", "protocol"],
+    "comments": [""],
+    "resources": [
+      {"https://github.com/ethereum/go-ethereum/wiki/RPC-PUB-SUB": "Geth wiki"}
+    ],
+    "status": "draft",
+    "last_update": "2018-07-19",
+    "implementations": [
+      ""
+      ],
+    "dependencies": ["Floodsub", "GossipSub"],
+    "required_by": [""]
+  },
+  "GossipSub": {
+    "summary": "",
+    "description": "",
+    "improves": [""],
+    "worsen": [""],
+    "layer": 1,
+    "tags": ["networking", "protocol"],
+    "comments": [""],
+    "resources": [
+      {"https://github.com/libp2p/specs/blob/master/pubsub/gossipsub/README.md": "Spec - GossipSub: Proximity Aware Epidemic PubSub for libp2p"}
+    ],
+    "status": "draft",
+    "last_update": "2018-07-19",
+    "implementations": [
+      ""
+      ],
+    "dependencies": [""],
+    "required_by": ["PubSub"]
+  }
+}

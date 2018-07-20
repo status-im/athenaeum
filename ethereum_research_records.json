@@ -57,7 +57,7 @@
       "https://github.com/ChainSafeSystems/lodestar_chain",
       "https://github.com/ethereum/research/tree/1830ae20915ea9bfb0363793ff3eec06ffbd9889/beacon_chain_impl"
       ],
-    "dependencies": ["RANDAO"],
+    "dependencies": ["RANDAO", "Blake2"],
     "required_by": [""]
   },
   "RANDAO": {
@@ -142,6 +142,29 @@
       ],
     "dependencies": [""],
     "required_by": ["sharding"]
+  },
+  "Blake2": {
+    "summary": "Hashing algorithm",
+    "description": "",
+    "improves": [""],
+    "layer": 1,
+    "tags": ["cryptography"],
+    "use-cases": [
+      ""
+    ],
+    "comments": [
+      ""
+      ],
+    "resources": [
+      {}
+    ],
+    "status": "implemented",
+    "last_update": "2018-07-20",
+    "implementations": [
+      "https://github.com/cheatfate/nimcrypto"
+      ],
+    "dependencies": [""],
+    "required_by": ["beacon chain"]
   },
   "zk-stark": {
     "summary": "ZK-STARK allows a party to prove validity of a claim (knowledge, ownership, transaction, ...) without disclosing non-public information.",

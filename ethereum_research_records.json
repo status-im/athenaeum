@@ -252,7 +252,8 @@
     "tags": ["proof of stake"],
     "comments": ["Though silent, as of July 2018, CBC-Casper is still ongoing: https://ethresear.ch/t/cbc-casper-in-the-face-of-the-new-pos-sharding-plans-on-ethereum/2444"],
     "resources": [
-      {}
+      {"https://github.com/ethereum/research/blob/master/papers/cbc-consensus/AbstractCBC.pdf": "Correct by Construction Consensus protocols"},
+      {"https://github.com/ethereum/research/blob/master/papers/CasperTFG/CasperTFG.pdf": "Casper CBC spec"}
     ],
     "status": "research",
     "last_update": "2018-07-18",

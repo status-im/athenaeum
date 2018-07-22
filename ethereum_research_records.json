@@ -212,7 +212,8 @@
       {"https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQs": "Official PoS FAQ"},
       {"https://medium.com/@jonchoi/ethereum-casper-101-7a851a4f1eb0": "Proof of Stake design philosophy"},
       {"https://medium.com/@tuurdemeester/critique-of-buterins-a-proof-of-stake-design-philosophy-49fc9ebb36c6": "Critique of PoS design philosophy"},
-      {"https://medium.com/@VitalikButerin/minimal-slashing-conditions-20f0b500fc6c": "Slashing and economic finality"}
+      {"https://medium.com/@VitalikButerin/minimal-slashing-conditions-20f0b500fc6c": "Slashing and economic finality"},
+      {"https://ethresear.ch/t/pos-fork-choice-rule-desiderata/2636": "PoS fork choice rules (Recursive proximity to justification (RPJ)"}
     ],
     "status": "research",
     "last_update": "2018-07-18",

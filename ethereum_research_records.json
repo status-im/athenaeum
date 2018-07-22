@@ -122,7 +122,8 @@
     "comments": [
       "Not quantum secure",
       "Will be replaced by STARKs",
-      "Relic and Milagro-crypto (check dis2/bls12) are professionally-written crypto primitive libraries in C with BLS primitives."
+      "Milagro-crypto is a professionally-written crypto primitive library in C, C++, Java, Rust, Go with BLS primitives and proper constant time bignum implementation",
+      "If implementing BLS from scratch, the BearSSL bignum implementation is fully constant-time and easier to read/maintain."
       ],
     "resources": [
       {"https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105": "EthResearch intrduction"},
@@ -139,7 +140,8 @@
       "https://github.com/relic-toolkit/relic/blob/master/src/cp/relic_cp_bls.c",
       "https://github.com/blynn/pbc/blob/master/example/bls.c",
       "https://github.com/str4d/bls",
-      "https://github.com/herumi/bls"
+      "https://github.com/herumi/bls",
+      "https://bearssl.org/gitweb/?p=BearSSL;a=tree;f=src/int;hb=HEAD"
       ],
     "dependencies": [""],
     "required_by": ["sharding"]

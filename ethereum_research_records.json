@@ -14,13 +14,13 @@
       "Attester - a validator that is part of a committee that needs to sign off on a block.",
       "Beacon chain - the central PoS chain that is the base of the sharding system.",
       "Shard chain - one of the chains on which transactions take place and account data is stored.",
-      "Main chain - used here to refer to the existing PoW chain, though note that this is temporary; in the long run the beacon chain will be the main chain.",
       "Cross-link - a set of signatures from a committee attesting to a block in a shard chain, which can be included into the beacon chain. Cross-links are the main means by which the beacon chain “learns about” the updated state of shard chains.",
       "Epoch - a period of 64 blocks.",
       "Finalized, justified - see Casper FFG finalization here: https://arxiv.org/abs/1710.09437"
       ],
     "resources": [
       {"https://github.com/ethereum/wiki/wiki/Sharding-FAQs": "Official FAQ"},
+      {"https://vitalik.ca/files/Ithaca201807_Sharding.pdf": "Sharding presentation slides by Vitalik"},
       {"https://medium.com/prysmatic-labs/how-to-scale-ethereum-sharding-explained-ba2e283b7fce": "Sharding high level overview by Prysmatic labs"},
       {"https://notes.ethereum.org/s/B1-7aivmX": "ECDC Berlin, July 1st Sharding Meeting"},
       {"https://www.youtube.com/playlist?list=PLaM7G4Llrb7zEHK2UzQo3kxadPyeUy2sZ": "ECDC Berlin videos"},

@@ -9,7 +9,6 @@
     "comments": [
       "Validator - a participant in the Casper/sharding consensus system. You can become one by depositing 32 ETH into the Casper mechanism.",
       "Active validator set - those validators who are currently participating, and which the Casper mechanism looks to produce and attest to blocks, cross-links and other consensus objects.",
-      "Notary - a signer of a cross-link",
       "Committee - a (pseudo-) randomly sampled subset of the active validator set. When a committee is referred to collectively, as in \"this committee attests to X\", this is assumed to mean \"some subset of that committee that contains enough validators that the protocol recognizes it as representing the committee\".",
       "Proposer - the validator that creates a block",
       "Attester - a validator that is part of a committee that needs to sign off on a block.",

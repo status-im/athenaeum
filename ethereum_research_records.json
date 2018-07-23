@@ -102,10 +102,6 @@
     "status": "proof-of-concept",
     "last_update": "2018-07-18",
     "implementations": [
-      "https://github.com/ethereum/beacon_chain",
-      "https://github.com/prysmaticlabs/beacon-chain",
-      "https://github.com/sigp/rust_beacon_chain",
-      "https://github.com/ChainSafeSystems/lodestar_chain"
       ],
     "dependencies": [""],
     "required_by": [""]

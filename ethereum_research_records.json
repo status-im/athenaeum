@@ -122,15 +122,14 @@
     "comments": [
       "Not quantum secure",
       "Will be replaced by STARKs",
-      "Milagro-crypto is a professionally-written crypto primitive library in C, C++, Java, Rust, Go with BLS primitives and proper constant time bignum implementation",
-      "If implementing BLS from scratch, the BearSSL bignum implementation is fully constant-time and easier to read/maintain."
+      "Milagro-crypto is a professionally-written crypto primitive library in C, C++, Java, Rust, Go with BLS primitives and proper constant time bignum implementation"
       ],
     "resources": [
       {"https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105": "EthResearch intrduction"},
       {"https://eprint.iacr.org/2018/483.pdf": "Paper: Compact Multi-Signatures for Smaller Blockchains"}
     ],
     "status": "research",
-    "last_update": "2018-07-18",
+    "last_update": "2018-07-23",
     "implementations": [
       "https://github.com/lovesh/signature-schemes",
       "https://github.com/zkcrypto/pairing",
@@ -140,8 +139,32 @@
       "https://github.com/relic-toolkit/relic/blob/master/src/cp/relic_cp_bls.c",
       "https://github.com/blynn/pbc/blob/master/example/bls.c",
       "https://github.com/str4d/bls",
-      "https://github.com/herumi/bls",
-      "https://bearssl.org/gitweb/?p=BearSSL;a=tree;f=src/int;hb=HEAD"
+      "https://github.com/herumi/bls"
+      ],
+    "dependencies": [""],
+    "required_by": ["sharding"]
+  },
+  "Constant-time bignum": {
+    "summary": "If we want side-channel resistant custom implementation of cryptographic curves, we need constant-time bignum library",
+    "description": "",
+    "improves": [""],
+    "layer": 1,
+    "tags": ["cryptography"],
+    "use-cases": [
+      ""
+    ],
+    "comments": [
+      "Comments on BearSSL bignum implementation: https://crypto.stackexchange.com/a/59852"
+      ],
+    "resources": [
+      {"https://bearssl.org/constanttime.html": "Constant Time cryptography"},
+      {"https://bearssl.org/ctmul.html": "Hardware multiplication is not always constant-time"}
+    ],
+    "status": "research",
+    "last_update": "2018-07-23",
+    "implementations": [
+      "https://bearssl.org/gitweb/?p=BearSSL;a=tree;f=src/int;hb=HEAD",
+      "https://github.com/milagro-crypto/amcl/tree/master/version3/c"
       ],
     "dependencies": [""],
     "required_by": ["sharding"]

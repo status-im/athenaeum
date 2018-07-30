@@ -121,10 +121,11 @@
       ],
     "resources": [
       {"https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105": "EthResearch intrduction"},
-      {"https://eprint.iacr.org/2018/483.pdf": "Paper: Compact Multi-Signatures for Smaller Blockchains"}
+      {"https://eprint.iacr.org/2018/483.pdf": "Paper: Compact Multi-Signatures for Smaller Blockchains"},
+      {"https://github.com/zcash/zcash/issues/2502": "Zcash team presentation of BLS12-381, perf, security, implementation"}
     ],
     "status": "research",
-    "last_update": "2018-07-23",
+    "last_update": "2018-07-30",
     "implementations": [
       "https://github.com/lovesh/signature-schemes",
       "https://github.com/zkcrypto/pairing",

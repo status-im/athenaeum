@@ -54,7 +54,8 @@
       "https://github.com/prysmaticlabs/beacon-chain",
       "https://github.com/sigp/rust_beacon_chain",
       "https://github.com/ChainSafeSystems/lodestar_chain",
-      "https://github.com/ethereum/research/tree/1830ae20915ea9bfb0363793ff3eec06ffbd9889/beacon_chain_impl"
+      "https://github.com/ethereum/research/tree/1830ae20915ea9bfb0363793ff3eec06ffbd9889/beacon_chain_impl",
+      "https://github.com/status-im/nim-beacon-chain"
       ],
     "dependencies": ["RANDAO", "Blake2"],
     "required_by": [""]
@@ -135,7 +136,8 @@
       "https://github.com/relic-toolkit/relic/blob/master/src/cp/relic_cp_bls.c",
       "https://github.com/blynn/pbc/blob/master/example/bls.c",
       "https://github.com/str4d/bls",
-      "https://github.com/herumi/bls"
+      "https://github.com/herumi/bls",
+      "https://github.com/status-im/nim-milagro-crypto"
       ],
     "dependencies": [""],
     "required_by": ["sharding"]

@@ -19,6 +19,7 @@
       "Finalized, justified - see Casper FFG finalization here: https://arxiv.org/abs/1710.09437"
       ],
     "resources": [
+      {"https://docs.google.com/presentation/d/1mdmmgQlRFUvznq1jdmRwkwEyQB0YON5yAg4ArxtanE4": "Sharding introduction by EF"}
       {"https://github.com/ethereum/wiki/wiki/Sharding-FAQs": "Official FAQ"},
       {"https://vitalik.ca/files/Ithaca201807_Sharding.pdf": "Sharding presentation slides by Vitalik"},
       {"https://medium.com/prysmatic-labs/how-to-scale-ethereum-sharding-explained-ba2e283b7fce": "Sharding high level overview by Prysmatic labs"},

@@ -132,6 +132,7 @@
     "implementations": [
       "https://github.com/lovesh/signature-schemes",
       "https://github.com/zkcrypto/pairing",
+      "https://github.com/leishman/bls_lib"
       "https://github.com/dis2/bls12",
       "https://github.com/milagro-crypto/amcl/tree/master/version3/c",
       "https://github.com/milagro-crypto/amcl/issues/29",

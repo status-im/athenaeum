@@ -138,7 +138,8 @@
       "https://github.com/blynn/pbc/blob/master/example/bls.c",
       "https://github.com/str4d/bls",
       "https://github.com/herumi/bls",
-      "https://github.com/status-im/nim-milagro-crypto"
+      "https://github.com/status-im/nim-milagro-crypto",
+      "https://github.com/Chia-Network/bls-signatures"
       ],
     "dependencies": [""],
     "required_by": ["sharding"]

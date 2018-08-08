@@ -133,7 +133,8 @@
     "last_update": "2018-07-30",
     "implementations": [
       {"https://github.com/lovesh/signature-schemes": "Rust: based on Milagro Crypto"},
-      {"https://github.com/zkcrypto/pairing": "Rust: official Zcash implementation"},
+      {"https://github.com/zkcrypto/pairing": "Rust: official Zcash curve implementation"},
+      {"https://github.com/str4d/bls": "Rust: (Zcash dev) complement to Zcash for key generation, signature and aggregate"},
       {"https://github.com/leishman/bls_lib": "C++ by Alexander Leishmann, crypto researcher @ Stanford U"},
       "https://github.com/dis2/bls12",
       "https://github.com/terenc3t/go-bls/blob/master/bls.go",
@@ -141,7 +142,6 @@
       "https://github.com/milagro-crypto/amcl/issues/29",
       "https://github.com/relic-toolkit/relic/blob/master/src/cp/relic_cp_bls.c",
       "https://github.com/blynn/pbc/blob/master/example/bls.c",
-      "https://github.com/str4d/bls",
       "https://github.com/herumi/bls",
       "https://github.com/status-im/nim-milagro-crypto",
       "https://github.com/Chia-Network/bls-signatures",

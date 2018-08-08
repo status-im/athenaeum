@@ -123,6 +123,7 @@
       ],
     "resources": [
       {"https://crypto.stanford.edu/~dabo/pubs/papers/BLSmultisig.html": "BLS aggregation spec"},
+      {"https://github.com/zkcrypto/pairing/tree/master/src/bls12_381#bls12-381-instantiation": "Less math symbols, more specs"}
       {"https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105": "EthResearch intrduction"},
       {"https://eprint.iacr.org/2018/483.pdf": "Paper: Compact Multi-Signatures for Smaller Blockchains"},
       {"https://github.com/zcash/zcash/issues/2502": "Zcash team presentation of BLS12-381, perf, security, implementation"}

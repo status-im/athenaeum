@@ -46,7 +46,8 @@
       "In charge of cross-links, slashing conditions, accounting, Casper FFG"
       ],
     "resources": [
-      {"https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ#Beacon-chain": "Beacon chain specification (WIP)"}
+      {"https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ#Beacon-chain": "Beacon chain specification (WIP)"},
+      {"https://www.mindomo.com/mindmap/beacon-chain-state-fcf0e883590443328356ad19bb83103e": "Mind map of the beacon chain"}
     ],
     "status": "proof-of-concept",
     "last_update": "2018-07-18",
@@ -127,7 +128,8 @@
       {"https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105": "EthResearch intrduction"},
       {"https://eprint.iacr.org/2018/483.pdf": "Paper: Compact Multi-Signatures for Smaller Blockchains"},
       {"https://github.com/zcash/zcash/issues/2502": "Zcash team presentation of BLS12-381, perf, security, implementation"},
-      {"https://medium.com/@VitalikButerin/exploring-elliptic-curve-pairings-c73c1864e627": "Explanation of Elliptic Curve pairings"}
+      {"https://medium.com/@VitalikButerin/exploring-elliptic-curve-pairings-c73c1864e627": "Explanation of Elliptic Curve pairings"},
+      {"https://www.maximintegrated.com/en/app-notes/index.mvp/id/5767": "ECDSA explanation"}
     ],
     "status": "research",
     "last_update": "2018-07-30",

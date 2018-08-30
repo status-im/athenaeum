@@ -20,6 +20,7 @@
       ],
     "resources": [
       {"https://docs.google.com/presentation/d/1mdmmgQlRFUvznq1jdmRwkwEyQB0YON5yAg4ArxtanE4": "Sharding introduction by EF"},
+      {"https://notes.ethereum.org/9MMuzWeFTTSg-3Tz_YeiBA?view": "Ethereum 2.0 Devs Handbook and FAQs"},
       {"https://github.com/ethereum/wiki/wiki/Sharding-FAQs": "Official FAQ"},
       {"https://vitalik.ca/files/Ithaca201807_Sharding.pdf": "Sharding presentation slides by Vitalik"},
       {"https://medium.com/prysmatic-labs/how-to-scale-ethereum-sharding-explained-ba2e283b7fce": "Sharding high level overview by Prysmatic labs"},
@@ -70,9 +71,11 @@
     "tags": ["sharding", "cryptography", "random number generator"],
     "comments": [
       "It should be completely deterministic given a blockchain state so that client can sync in a deferred manner.",
-      "It should not be predictable, so that it can be used as a strong PRNG (or even cryptographic RNG."
+      "It should not be predictable, so that it can be used as a strong PRNG (or even cryptographic RNG.",
+      "VDFs: Verifiable Delay Functions"
       ],
     "resources": [
+      {"https://docs.google.com/presentation/d/13OAGL42yzOvQUKvJJ0EBsAAne25yA7sv9RC8FfPhtyo/edit#slide=id.p": "Ethereum 2.0 randomness presentation"},
       {"https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ#Beacon-chain": "Beacon chain specification (WIP)"},
       {"https://ethresear.ch/t/making-the-randao-less-influenceable-using-a-random-1-bit-clock/2566/17": "Proposal on reducing influence of validator on the final number generated"},
       {"https://ethresear.ch/t/rng-exploitability-analysis-assuming-pure-randao-based-main-chain/1825": "Exploitability analysis of the RANDAO RNG"},
@@ -124,7 +127,7 @@
       ],
     "resources": [
       {"https://crypto.stanford.edu/~dabo/pubs/papers/BLSmultisig.html": "BLS aggregation spec"},
-      {"https://github.com/zkcrypto/pairing/tree/master/src/bls12_381#bls12-381-instantiation": "Less math symbols, more specs"}
+      {"https://github.com/zkcrypto/pairing/tree/master/src/bls12_381#bls12-381-instantiation": "Less math symbols, more specs"},
       {"https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105": "EthResearch intrduction"},
       {"https://eprint.iacr.org/2018/483.pdf": "Paper: Compact Multi-Signatures for Smaller Blockchains"},
       {"https://github.com/zcash/zcash/issues/2502": "Zcash team presentation of BLS12-381, perf, security, implementation"},

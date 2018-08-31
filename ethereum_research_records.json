@@ -28,7 +28,8 @@
       {"https://www.youtube.com/playlist?list=PLaM7G4Llrb7zEHK2UzQo3kxadPyeUy2sZ": "ECDC Berlin videos"},
       {"https://notes.ethereum.org/SCIg8AH5SA-O4C1G1LYZHQ": "WIP Specification of Casper + Sharding chain"},
       {"https://ethresear.ch/t/convenience-link-to-full-casper-chain-v2-spec/2332/12": "Ongoing discussion on the Casper + Sharding spec"},
-      {"https://ethresear.ch/t/offchain-collation-headers/1679/6": "Offchain collation headers proposal"}
+      {"https://ethresear.ch/t/offchain-collation-headers/1679/6": "Offchain collation headers proposal"},
+      {"https://docs.google.com/presentation/d/1aqU1gK8B_sozm6orNVqqyvBTC2u2_13Re0Fi99rFhjg/edit#slide=id.g413fdd60fc_1_233": "oblique hashes explanation"}
     ],
     "status": "research",
     "last_update": "",

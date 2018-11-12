@@ -127,7 +127,7 @@
       "Milagro-crypto is a professionally-written crypto primitive library in C, C++, Java, Rust, Go with BLS primitives and proper constant time bignum implementation"
       ],
     "resources": [
-      {"https://orbs.com/wp-content/uploads/2018/07/Threshold-Cryptography-and-Digital-Key-Distribution.pdf": "Elliptic Curve, pairing curve and BLS presentation"}
+      {"https://orbs.com/wp-content/uploads/2018/07/Threshold-Cryptography-and-Digital-Key-Distribution.pdf": "Elliptic Curve, pairing curve and BLS presentation"},
       {"https://crypto.stanford.edu/~dabo/pubs/papers/BLSmultisig.html": "BLS aggregation spec"},
       {"https://github.com/zkcrypto/pairing/tree/master/src/bls12_381#bls12-381-instantiation": "Less math symbols, more specs"},
       {"https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105": "EthResearch intrduction"},
